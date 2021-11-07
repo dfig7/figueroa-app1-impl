@@ -1,0 +1,95 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Application{
++parent root
+
+}
+
+class Item{
+    -String name
+    -String description
+    -String dueDate
+    -Boolean completed
+
+    +getName()
+    +getDescription()
+    +getDueDate()
+    +getCompleted()
+    +setDescription()
+    +setDueDate()
+    +setCompleted()
+
+}
+
+class ToDoList{
+
+    -ArrayList<Item> toDoList
+    -String listTitle
+
+    +getToDoList()
+    +addItem()
+    +getListTitle()
+    +removeItem()
+    +displayAllItems()
+    +displayCompletedItems()
+    +displayIncompletedItems()
+    +save()
+
+}
+
+class ListOfListController{
+       -Button openList;
+
+        -Button addNewList;
+
+        - Button deleteList;
+
+        - Button editList;
+
+        -Button saveList;
+
+        -TextField addListNameInput;
+
+        - ListView<?> listOfLists;
+
+}
+
+class SelectedListController{
+
+    -Text toDoListName;
+
+    - Button showCompletedButton;
+
+    - Button showIncompletedButton;
+
+    - TableColumn<?, ?> ItemNameRow;
+
+    -TableColumn<?, ?> ItemDescriptionRow;
+
+    -TableColumn<?, ?> ItemDueDateRow;
+
+    - TableColumn<?, ?> ImteCompletedRow;
+
+    -TextField DescriptionInput;
+
+    -Button deleteButton;
+
+    -TextField dueDateInput;
+
+   - Button goBackButton;
+
+    - TextField ItemNameInput;
+
+    -Button addOrEditButton;
+
+}
+
+Item -->"Items inside toDoList" ToDoList
+ToDoList -->"toDoList inside application" Application
+
+ListOfListController --> Application
+SelectedListController --> Application
+
+
+@enduml

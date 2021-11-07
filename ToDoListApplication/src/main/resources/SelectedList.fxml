@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectedListController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.5" minWidth="0.0" prefWidth="0.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="109.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="307.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="68.5" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="600.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="1.0" prefWidth="1.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="91.5" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="317.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="371.0" minWidth="10.0" prefWidth="191.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="DescriptionInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="225.0" promptText="Task Description:" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteSelectedItem" text="Delete" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                        <TextField fx:id="dueDateInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="92.0" promptText="YYYY-MM-DD" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
+                        <Button fx:id="saveListButton" mnemonicParsing="false" onAction="#saveListToFile" text="Save List" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+                        <TextField fx:id="ItemNameInput" prefHeight="25.0" prefWidth="120.0" promptText="Item Name:" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                        <Button fx:id="addOrEditButton" layoutX="50.0" mnemonicParsing="false" onAction="#addList" text="Add/Edit" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="clearListButton" mnemonicParsing="false" onAction="#clearFullList" text="Clear List" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" />
+                        <TextField fx:id="completedInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="47.0" promptText="Y/N:" GridPane.columnIndex="3" GridPane.valignment="TOP" />
+                        <Text fx:id="errorText" strokeType="OUTSIDE" strokeWidth="0.0" text="__" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <TableView fx:id="tableView" prefHeight="334.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn fx:id="taskCol" prefWidth="83.5" text="Task" />
+                      <TableColumn fx:id="descriptionCol" prefWidth="292.0" text="Description" />
+                        <TableColumn fx:id="dateCol" prefWidth="114.5" text="Due Date" />
+                        <TableColumn fx:id="completedCol" prefWidth="108.5" text="Completed (Y/N)" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.5" minWidth="0.0" prefWidth="0.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="47.0" minHeight="9.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.5" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fx:id="toDoListName" strokeType="OUTSIDE" strokeWidth="0.0" text="To-Do List" GridPane.halignment="LEFT">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <ButtonBar prefHeight="23.0" prefWidth="600.0">
+                    <buttons>
+                      <Button fx:id="showAllButton" mnemonicParsing="false" onAction="#showAllItems" text="Show All" />
+                        <Button fx:id="showCompletedButton" mnemonicParsing="false" onAction="#showCompletedItems" text="Show Completed" />
+                        <Button fx:id="showIncompletedButton" mnemonicParsing="false" onAction="#showIncompleteItems" text="Show Incompleted" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
