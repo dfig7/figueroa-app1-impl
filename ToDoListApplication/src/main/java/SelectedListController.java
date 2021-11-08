@@ -148,7 +148,7 @@ public class SelectedListController {
             errorText.setText("Name and Description field cannot be empty!");
             return;
         }
-        else if(dueDateInput.getText().equals("") || dateFormatCheck(dueDateInput.getText())){
+        else if(!dueDateInput.getText().equals("") && dateFormatCheck(dueDateInput.getText())){
             errorText.setText("Input date as YYYY-MM-DD!");
             return;
         }

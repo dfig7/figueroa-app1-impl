@@ -94,5 +94,6 @@
       </GridPane>
       <TextField fx:id="fileNameInput" layoutY="400.0" prefHeight="25.0" prefWidth="225.0" promptText="File Name to Save/Load List:" />
       <Button fx:id="loadFileButton" layoutX="536.0" layoutY="400.0" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
+      <Button fx:id="userGuideButton" layoutX="461.0" layoutY="400.0" mnemonicParsing="false" onAction="#userGuide" text="User Guide" />
    </children>
 </AnchorPane>

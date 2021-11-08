@@ -22,56 +22,77 @@ class Item{
 
 }
 
-class ToDoList{
-
-    -ArrayList<Item> toDoList
-    -String listTitle
-
-    +getToDoList()
-    +addItem()
-    +getListTitle()
-    +removeItem()
-    +displayAllItems()
-    +displayCompletedItems()
-    +displayIncompletedItems()
-    +save()
-
-}
 
 
 
 class SelectedListController{
 
-    -Text toDoListName;
+     -TextField DescriptionInput;
 
-    - Button showCompletedButton;
+     -Button deleteButton;
 
-    - Button showIncompletedButton;
+     -TextField dueDateInput;
 
-    - TableColumn<?, ?> ItemNameRow;
+     -Button saveListButton;
 
-    -TableColumn<?, ?> ItemDescriptionRow;
+     -TextField ItemNameInput;
 
-    -TableColumn<?, ?> ItemDueDateRow;
+     -Button addOrEditButton;
 
-    - TableColumn<?, ?> ImteCompletedRow;
+     -Button clearListButton;
 
-    -TextField DescriptionInput;
+     -TextField completedInput;
 
-    -Button deleteButton;
+     -Text errorText;
 
-    -TextField dueDateInput;
+     -TableView<?> tableView;
 
-   - Button goBackButton;
+     -TableColumn<?, ?> taskCol;
 
-    - TextField ItemNameInput;
+     -TableColumn<?, ?> descriptionCol;
 
-    -Button addOrEditButton;
+     -TableColumn<?, ?> dateCol;
 
-}
+     -TableColumn<?, ?> completedCol;
+
+     -Text toDoListName;
+
+     -Button showAllButton;
+
+     -Button showCompletedButton;
+
+     -Button showIncompletedButton;
+
+     -TextField fileNameInput;
+
+     -Button loadFileButton;
+
+     -Button userGuideButton;
+
+     +void addList()
+
+     +void clearFullList()
+
+     +void deleteSelectedItem()
+
+     +void loadFile()
+
+     +void saveListToFile()
+
+     +void showAllItems()
+
+     +void showCompletedItems()
+
+     +void showIncompleteItems()
+
+     +void userGuide()
+
+ }
+
+
 
 Item -->"Items inside controller" SelectedListController
-ToDoList -->"toDoList inside application" Application
+
 
 SelectedListController --> Application
 
