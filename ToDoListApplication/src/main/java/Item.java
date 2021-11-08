@@ -2,6 +2,11 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/*
+ *  UCF COP3330 Fall 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Diego Figueroa
+ */
+
 public class Item {
     private StringProperty name = new SimpleStringProperty();
     private StringProperty description = new SimpleStringProperty();
