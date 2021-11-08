@@ -81,6 +81,9 @@ public class SelectedListController {
     @FXML
     private Button showIncompletedButton;
 
+    @FXML
+    private Button userGuideButton;
+
 
     @FXML
     private Button loadFileButton;
@@ -274,6 +277,11 @@ public class SelectedListController {
         tableView.setItems(completedList);
 
 
+    }
+
+    @FXML
+    void userGuide(ActionEvent event) {
+        errorText.setText("https://youtu.be/rTeOEplte9I");
     }
 
     //checks if textfield is populated for requirement #2
